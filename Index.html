@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link rel="stylesheet" href="./Styles.css"/>
+  </head>
+  <body>
+    <h1 class="underline"> CSS Basics</h1>
+
+    <p>CSS (<span class="bold underline"> C</span>ascading <span class="bold underline"> S</span>tyle <span class="bold underline">S</span>heets) is the code that styles web content. CSS basics walks through what you need to get started.
+       We will answer questions like: How do I make text red? How do I make content display at a certain location in the (webpage)
+       layout? How do I decorate my webpage with background images and colors?</p>
+
+       <h2>What is CSS?</h2>
+
+       <p>CSS is a style sheet language. CSS is what you use to selectively style HTML elements.
+          For example, this CSS selects paragraph text, setting the color to red:</p>
+
+          <p id="red-title"> p {
+             color: red;
+          }</p>
+
+          <p>Let's try it out! Using a text editor, paste the three lines of CSS (above) into a new file.
+             Save the file as style.css in a directory named styles.
+            
+             To make the code work, we still need to apply this CSS (above) to your HTML document. 
+             Otherwise, the styling won't change the appearance of the HTML. (If you haven't been
+             following our project, pause here to read Dealing with files and HTML basics.)</p>
+             
+             <ol>
+                 <li>Open your index.html file. Paste the following line in the head (between the <head> and </head> tags)</li>
+                 <li>Save index.html and load it in your browser. You should see something like this:
+                     <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/website-screenshot-styled.png"/>
+                    </li>
+             </ol>
+<p>If your paragraph text is red, congratulations! Your CSS is working.</p>
+
+<h2>Anatomy of a CSS ruleset</h2>
+<p>Let's dissect the CSS code for red paragraph text to understand how it works :</p>
+<img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/css-declaration-small.png"/>
+
+<p>The whole structure is called a ruleset. (The term ruleset is often referred to as just rule.) Note the names of the individual parts:</p>
+
+<h4>Selector</h4>
+    <p>This is the HTML element name at the start of the ruleset. It defines the element(s) to be styled (in this example, <p> elements). 
+       To style a different element, change the selector.</p>
+
+       <h4>Declaration</h4>
+           <p>This is a single rule like color: red;. It specifies which of the element's properties 
+             you want to style.</p>
+
+        <h4>Properties</h4>
+            <p>These are ways in which you can style an HTML element. (In this example, color is a property of the <p> elements.) In CSS, you choose which properties 
+               you want to affect in the rule.</p>
+
+        <h4>Property value</h4>
+            <p>To the right of the property—after the colon—there is the property value. This chooses one out of many possible appearances for a given property. 
+               (For example, there are many color values in addition to red.)</p>
+
+               <p>Note the other important parts of the syntax:</p>
+
+               <ul>
+                   <li>Apart from the selector, each ruleset must be wrapped in curly braces. ({})</li>
+
+                   <li>Within each declaration, you must use a colon (:) to separate the property from its value or values.</li>
+
+                   <li>Within each ruleset, you must use a semicolon (;) to separate each declaration from the next one.</li>
+               </ul>
+
+               <p>To modify multiple property values in one ruleset, write them separated by semicolons, like this:</p>
+
+               <p>p {
+                <span id="red-ti" color>: red;
+                <span id="red-ti"> 500px;
+                <span id="red-ti"> 1px solid black;
+              }</p>
+
+              <h2>Selecting multiple elements</h2>
+
+              <p>You can also select multiple elements and apply a single ruleset to all of them. Separate multiple selectors by commas. For example:</p>
+
+              <p>p, li, h1 {
+                color: red;
+              }</p>
+
+              <h2>Different types of selectors</h2>
+
+              <p>There are many different types of selectors. The examples above use element selectors, which select all elements of a given type. But we can make more specific selections as well.
+                 Here are some of the more common types of selectors:</p>
+
+                 <ol>
+                     <li>Element selector (sometimes called a tag or type selector): All HTML elements of the specified type.</li>
+                     <li>ID selector: The element on the page with the specified ID. On a given HTML page, each id value should be unique.</li>
+                     <li>Class selector: The element(s) on the page with the specified class. Multiple instances of the same class can appear on a page.</li>
+                     <li>Attribute selector: The element(s) on the page with the specified attribute. </li>
+                     <li>Pseudo-class selector: The specified element(s), but only when in the specified state. (For example, when a cursor hovers over a link.)</li>
+
+                 </ol>
+
+                 <h1>Fonts and text</h1>
+
+                 <ol>
+                     <li>First, find the output from Google Fonts that you previously saved from What will your website look like?.
+                         Add the <link> element somewhere inside your index.html's head (anywhere between the <head> and </head> tags).</li>
+                     <li>Next, delete the existing rule you have in your style.css file. It was a good test, but let's not continue 
+                         with lots of red text.</li>
+                     <li>Add the following lines (shown below), replacing the font-family assignment with your font-family selection 
+                         from What will your website look like?. The property font-family refers to the font(s) you want to use for 
+                         text. This rule defines a global base font and font size for the whole page. Since <html> is the parent 
+                         element of the whole page, all elements inside it inherit the same font-size and font-family.</li>
+                     <li>Now let's set font sizes for elements that will have text inside the HTML body. We'll also center 
+                         the heading. Finally, let's expand the second ruleset (below) with settings for line 
+                         height and letter spacing to make body content more readable.</li>
+                 </ol>
+
+
+                <h1>CSS: all about boxes</h1>
+                 
+                <p>Something you'll notice about writing CSS: a lot of it is about boxes. This includes setting size, color, and position. 
+                   Most HTML elements on your page can be thought of as boxes sitting on top of other boxes.</p>
+
+                   <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/boxes.jpg"/>
+
+                   <p>CSS layout is mostly based on the box model. Each box taking up space on your page has properties like:</p>
+
+                   <ul>
+                       <li>Padding, the space around the content. In the example below, it is the space around the paragraph text.</li>
+
+                       <li>Border, the solid line that is just outside the padding.</li>
+
+                       <li>Margin, the space around the outside of the border.</li>
+                   </ul>
+
+                   <p>In this section we also use:</p>
+
+                   <ul>
+                       <li>width (of an element).</li>
+
+                       <li>background-color, the color behind an element's content and padding.</li>
+
+                       <li>color, the color of an element's content (usually text).</li>
+
+                       <li>text-shadow sets a drop shadow on the text inside an element.</li>
+
+                       <li>display sets the display mode of an element. (keep reading to learn more)</li>
+                   </ul>
+
+                   <h2>Changing the page color</h2>
+
+                   <p>html {
+                    background-color: #00539F;
+                  }</p>
+
+                  <p>This rule sets a background color for the entire page. 
+                     Change the color code to the color you chose in What will my website look like?</p>
+
+                     <h2>Styling the body</h2>
+
+                     <p>body {
+                        width: 600px;
+                        margin: 0 auto;
+                        background-color: #FF9500;
+                        padding: 0 20px 20px 20px;
+                        border: 5px solid black;
+                      }</p>
+
+                      <p>Let's go through these line-by-line:</p>
+
+                      <ul>
+                          <li>width: 600px; This forces the body to always be 600 pixels wide.</li>
+                          <li>margin: 0 auto; When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case); the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right).
+                              You can also use one, three, or four values, as documented in Margin Syntax.</li>
+                          <li>background-color: #FF9500; This sets the element's background color. This project uses a reddish 
+                               orange for the body background color, as opposed to dark blue for the <html> element. 
+                               (Feel free to experiment.)</li>
+                         <li>padding: 0 20px 20px 20px; This sets four values for padding. The goal is to put some space around the content. In this example, there is no padding on the top of the body, and 20 pixels on the right, bottom and left. The values set top, right, bottom, left, in that order. 
+                             As with margin, you can use one, two, three, or four values, as documented in Padding Syntax.</li>
+                         <li>border: 5px solid black; This sets values for the width, style and color of the border. 
+                             In this case, it's a five-pixel–wide, solid black border, on all sides of the body.</li>
+                      </ul>
+
+                      <h2>Positioning and styling the main page title</h2>
+
+                      <p>h1 {
+                        margin: 0;
+                        padding: 20px 0;
+                        color: #00539F;
+                        text-shadow: 3px 3px 1px black;
+                      }</p>
+
+                      <p>You may have noticed there's a horrible gap at the top of the body. That happens because browsers apply default styling to the <h 1> element (among others).
+                         That might seem like a bad idea, but the intent is to provide basic readability for unstyled pages. 
+                         To eliminate the gap, we overwrite the browser's default styling with the setting margin: 0;.</p>
+
+                         <p>Next, we set the heading's top and bottom padding to 20 pixels.</p>
+
+                         <p>Following that, we set the heading text to be the same color as the HTML background color.</p>
+
+                         <p>Finally, text-shadow applies a shadow to the text content of the element. Its four values are:</p>
+
+                         <ul>
+                             <li>The first pixel value sets the horizontal offset of the shadow from the text: how far it moves across.</li>
+                             <li>The second pixel value sets the vertical offset of the shadow from the text: how far it moves down.</li>
+                             <li>The third pixel value sets the blur radius of the shadow. A larger value produces a more fuzzy-looking shadow.</li>
+                             <li>The fourth value sets the base color of the shadow.</li>
+                         </ul>
+
+                       <h2>Centering the image</h2>
+
+                       <p>img {
+                        display: block;
+                        margin: 0 auto;
+                      }</p>
+
+                      <p>Next, we center the image to make it look better. We could use the margin: 0 auto trick again as we did for the body. 
+                         But there are differences that require an additional setting to make the CSS work.</p>
+
+                      <p>The <body> is a block element, meaning it takes up space on the page. The margin applied to a block element will be respected by other elements on the page. 
+                         In contrast, images are inline elements, for the auto margin trick to work on this image, we must give it 
+                         block-level behavior using display: block;.</p>
+
+
+                      <h1>Conclusion</h1>
+
+                      <p>If you followed all the instructions in this article, you should have a page that looks similar to this one:</p>
+
+                       <img src="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics/website-screenshot-final.png"/>
+
+                       
+                          
+                          
+
+
+
+        
+  </body>
+</html>
